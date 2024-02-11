@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/wrapper.css';
+import '../styles/image-wrapper.css';
 
 const Icon = ({ icon }) => {
     const styleIcon = {

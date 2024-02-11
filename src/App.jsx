@@ -1,17 +1,15 @@
-import React from "react";
-//components
+import React, { useEffect } from "react";
 import { Grid } from './components/Grid';
 import { Box } from './components/Box';
 import { Col, Row } from './components/Layout';
 import { Button } from './components/Button';
 import { Header } from './components/Header';
-//assets
 import SvgStash from './assets/svg/stash.svg'
 import { Globe } from './assets/png'
-
 import './App.css';
 
 const App = () => {
+
   return (
     <div className='page'>
       <div className='page-col'>

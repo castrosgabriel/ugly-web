@@ -1,35 +1,31 @@
+import React, { forwardRef } from 'react'
 import '../styles/box.css'
 import { Col, Row } from './Layout'
 import { Icon, Img } from './ImageCp'
-
 import { SvgArrow } from '../assets/svg'
+import { motion } from 'framer-motion'
 
-const Box = ({ bgColor, children, contentColor, minWidth, maxHeight, delay, animationScroll }) => {
 
+const Box = forwardRef(({ bgColor, children, contentColor, minWidth, maxHeight }, ref) => {
     const styleBox = {
-        animationPlayState: `${animationScroll ? 'paused' : 'running'}`,
-        animationDelay: `${delay}s`,
         maxHeight: `${maxHeight}px`,
         minWidth: `${minWidth}px`,
         backgroundColor: `${bgColor}`,
         color: `${contentColor}`,
     }
-
     return (
-        <>
-            <div className="box" style={styleBox}>
-                {children}
-            </div >
-        </>
+        <div ref={ref} className="box" style={styleBox}>
+            {children}
+        </div >
     )
-}
+})
 
-const VerticalBox = ({ img, title, bgColor, maxHeight, minWidth, delay, animationScroll }) => {
+
+const VerticalBox = forwardRef(({ img, title, bgColor, maxHeight, minWidth }, ref) => {
 
     return (
         <Box
-            animationScroll={animationScroll}
-            delay={delay}
+            ref={ref}
             minWidth={minWidth}
             maxHeight={maxHeight}
             bgColor={bgColor}
@@ -40,14 +36,14 @@ const VerticalBox = ({ img, title, bgColor, maxHeight, minWidth, delay, animatio
                 <h3>{title}</h3>
             </Col>
         </Box>
-    )
-}
 
-const HorizontalBox = ({ title, subtitle, bgColor, contentColor, maxHeight, delay, animationScroll }) => {
+    )
+})
+
+const HorizontalBox = forwardRef(({ title, subtitle, bgColor, contentColor, maxHeight }, ref) => {
     return (
         <Box
-            animationScroll={animationScroll}
-            delay={delay}
+            ref={ref}
             maxHeight={maxHeight}
             bgColor={bgColor}
             contentColor={contentColor}
@@ -61,14 +57,13 @@ const HorizontalBox = ({ title, subtitle, bgColor, contentColor, maxHeight, dela
             </Row>
         </Box>
     )
-}
+})
 
-const SquaryBox = ({ img, title, bgColor, contentColor, minWidth, height, maxHeight, delay, animationScroll }) => {
+const SquaryBox = forwardRef(({ img, title, bgColor, contentColor, minWidth, height, maxHeight }, ref) => {
     return (
 
         <Box
-            animationScroll={animationScroll}
-            delay={delay}
+            ref={ref}
             maxHeight={maxHeight}
             height={height}
             minWidth={minWidth}
@@ -85,6 +80,6 @@ const SquaryBox = ({ img, title, bgColor, contentColor, minWidth, height, maxHei
         </Box>
 
     )
-}
+})
 
 export { Box, SquaryBox, HorizontalBox, VerticalBox }

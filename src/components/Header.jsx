@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from 'react'
 import { Row } from './Layout'
 import { SvgLogo, SvgLanguage, SvgDollar } from '../assets/svg'
 import '../styles/header.css'

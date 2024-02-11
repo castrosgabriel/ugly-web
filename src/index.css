@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
 @font-face {
   font-family: 'Helvetica Now';
   src: url('./assets/font/HelveticaNowDisplay-CnBd.otf') format('opentype');
 }
 
+* {
+  margin: unset;
+}
 
 html {
   font-size: calc(min(max(1vw, 13px), 16px));
@@ -13,10 +15,6 @@ html {
 body {
   margin: 0;
   background-color: var(--color-bg);
-}
-
-* {
-  margin: unset;
 }
 
 h1 {
