@@ -1,0 +1,39 @@
+.page-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 1400px;
+    padding: 32px;
+    gap: 16px;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+}
+
+.first {
+    height: 80vh;
+}
+
+.bg-stash {
+    transform: translateY(5vh);
+    position: absolute;
+    z-index: 1;
+    width: 70vh;
+}
+
+.title {
+    display: flex;
+    z-index: 2;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.globe {
+    margin-top: -144px;
+    width: 100%;
+    object-fit: contain;
+}
+

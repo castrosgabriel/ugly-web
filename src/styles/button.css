@@ -1,0 +1,27 @@
+button {
+    background-color: var(--color-ulgy);
+    color: var(--color-text);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    width: fit-content;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    p {
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+button:hover {
+    padding: 12px 32px;
+
+    p {
+        transform: scale(1.05);
+        letter-spacing: -0.02rem;
+    }
+}
+
+button:active {
+    background-color: var(--color-pressed);
+}

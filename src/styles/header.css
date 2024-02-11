@@ -1,0 +1,21 @@
+.header {
+    position: fixed;
+    background-color: var(--color-box-1);
+    width: calc(100% - 128px);
+    max-width: calc(1400px - 64px);
+    padding: 16px 32px;
+    border-radius: 32px;
+    z-index: 99;
+}
+
+.btn-nav {
+    display: flex;
+    width: fit-content;
+}
+
+.btn-container {
+    align-items: center;
+    display: flex;
+    gap: 32px;
+    width: fit-content;
+}

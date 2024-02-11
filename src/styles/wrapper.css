@@ -1,0 +1,14 @@
+.img-wrapper {
+    display: flex;
+    flex: 1;
+
+    img {
+        width: 100%;
+        object-fit: contain;
+    } 
+}
+
+.icon {
+    width: 1.8rem;
+    height: 1.8rem;
+}

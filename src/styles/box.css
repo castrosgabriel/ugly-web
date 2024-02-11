@@ -1,0 +1,23 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-box-1);
+    flex: 1;
+    border-radius: 24px;
+    padding: 32px;
+    gap: 48px;
+    justify-content: flex-start;
+    color: var(--color-text);
+    height: calc(100% - 64px);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    transform: translateY(20px);
+}
+
+.box:hover {
+    background-color: #2f2f2f;
+}
+
+
+
