@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react'
+import React, { forwardRef } from 'react'
 import '../styles/box.css'
 import { Col, Row } from './Layout'
 import { Icon, Img } from './ImageCp'
@@ -31,7 +31,6 @@ const Box = forwardRef(({
             onClick={onClick}
             className="box"
             whileHover={hasHover ? {
-                zoom: 1.02,
                 cursor: 'pointer',
                 backgroundColor: hoverColor
             } : null}
@@ -41,79 +40,62 @@ const Box = forwardRef(({
     )
 })
 
+const GridBox = forwardRef(({ type, img, title, subtitle, contentColor, bgColor, hoverColor, minWidth, height, maxHeight }, ref) => {
+    const renderContent = () => {
 
-const VerticalBox = forwardRef(({ hoverColor, img, title, bgColor, maxHeight, minWidth, hasHover, newText }, ref) => {
+        const boxProps = {
+            hoverColor: hoverColor,
+            hasHover: true,
+            ref: ref,
+            bgColor: bgColor,
+            maxHeight: maxHeight,
+            minWidth: minWidth,
+            contentColor: contentColor,
+            height: height
+        }
 
-    const [detailsPage, setDetailsPage] = useState(false)
+        switch (type) {
+            case 'vertical':
+                return (
+                    <Box {...boxProps}>
 
-    return (
-        <Box
-            hoverColor={hoverColor}
-            hasHover={hasHover}
-            ref={ref}
-            minWidth={minWidth}
-            maxHeight={maxHeight}
-            bgColor={bgColor}
-            onClick={() => setDetailsPage(!detailsPage)}
-        >
-            {detailsPage ?
-                <h1>{newText}</h1>
-                :
-                <Col alignItems={'flex-end'}>
-                    <Icon icon={SvgArrow} />
-                    <Img src={img} />
-                    <h3>{title}</h3>
-                </Col>}
+                        <Col alignItems={'flex-end'}>
+                            <Icon icon={SvgArrow} />
+                            <Img src={img} />
+                            <h3>{title}</h3>
+                        </Col>
+                    </Box>
+                );
+            case 'horizontal':
+                return (
+                    <Box {...boxProps} >
+                        <Row gap={16}>
+                            <Col gap={4}>
+                                <h3>{title}</h3>
+                                <h4>{subtitle}</h4>
+                            </Col>
+                            <Icon icon={SvgArrow} />
+                        </Row>
+                    </Box>
+                );
+            case 'squary':
+                return (
+                    <Box {...boxProps}>
+                        <Col>
+                            <Row justifyContent={'space-between'}>
+                                <Img src={img} maxHeight={200} minHeight={100} />
+                                <Icon icon={SvgArrow} />
+                            </Row>
+                            <h3>{title}</h3>
+                        </Col>
+                    </Box>
+                );
+            default:
+                return null;
+        }
+    };
 
-        </Box>
-
-    )
+    return renderContent()
 })
 
-const HorizontalBox = forwardRef(({ hoverColor, title, subtitle, bgColor, contentColor, maxHeight, hasHover }, ref) => {
-    return (
-        <Box
-            hoverColor={hoverColor}
-            hasHover={hasHover}
-            ref={ref}
-            maxHeight={maxHeight}
-            bgColor={bgColor}
-            contentColor={contentColor}
-        >
-            <Row gap={16}>
-                <Col gap={4}>
-                    <h3>{title}</h3>
-                    <h4>{subtitle}</h4>
-                </Col>
-                <Icon icon={SvgArrow} />
-            </Row>
-        </Box>
-    )
-})
-
-const SquaryBox = forwardRef(({ hoverColor, img, title, bgColor, contentColor, minWidth, height, maxHeight, hasHover }, ref) => {
-    return (
-
-        <Box
-            hoverColor={hoverColor}
-            hasHover={hasHover}
-            ref={ref}
-            maxHeight={maxHeight}
-            height={height}
-            minWidth={minWidth}
-            bgColor={bgColor}
-            contentColor={contentColor}
-        >
-            <Col>
-                <Row justifyContent={'space-between'}>
-                    <Img src={img} maxHeight={200} minHeight={100} />
-                    <Icon icon={SvgArrow} />
-                </Row>
-                <h3>{title}</h3>
-            </Col>
-        </Box>
-
-    )
-})
-
-export { Box, SquaryBox, HorizontalBox, VerticalBox }
+export { Box, GridBox }

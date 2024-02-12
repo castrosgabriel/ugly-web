@@ -1,14 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import '../styles/grid.css'
-import { VerticalBox, HorizontalBox, SquaryBox } from './Box';
+import { GridBox } from './Box';
 import { Row, Col } from './Layout';
 import { CardMc, Cup, Passport } from '../assets/png'
 import { SvgPig, SvgCard } from '../assets/svg'
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const MotionVerticalBox = motion(VerticalBox)
-const MotionHorizontalBox = motion(HorizontalBox)
-const MotionSquaryBox = motion(SquaryBox)
+const MotionGridBox = motion(GridBox)
 
 const Grid = () => {
     const ref = useRef();
@@ -28,7 +26,8 @@ const Grid = () => {
     return (
         <div ref={ref} className='grid'>
             <Col minWidth={400}>
-                <MotionHorizontalBox
+                <MotionGridBox
+                    type={'horizontal'}
                     hoverColor={'var(--color-primitives-gray-20)'}
                     hasHover={true}
                     style={setMotionStyle(0)}
@@ -38,14 +37,16 @@ const Grid = () => {
                     contentColor={'var(--color-primitives-black-100)'}
                 />
                 <Row maxHeight={800}>
-                    <MotionVerticalBox
+                    <MotionGridBox
+                        type={'vertical'}
                         hasHover={true}
                         style={setMotionStyle(0.4)}
                         img={CardMc}
                         title={'Mastercard debit for online & app purchases!**'}
                         newText={'New Text'}
                     />
-                    <MotionVerticalBox
+                    <MotionGridBox
+                        type={'vertical'}
                         hasHover={true}
                         style={setMotionStyle(0.5)}
                         img={Passport}
@@ -55,7 +56,8 @@ const Grid = () => {
             </Col>
             <Col minWidth={400}>
                 <Row>
-                    <MotionSquaryBox
+                    <MotionGridBox
+                        type={'squary'}
                         hasHover={true}
                         style={setMotionStyle(0)}
                         img={SvgPig}
@@ -64,14 +66,16 @@ const Grid = () => {
                     />
                 </Row>
                 <Row maxHeight={500}>
-                    <MotionSquaryBox
+                    <MotionGridBox
+                        type={'squary'}
                         hasHover={true}
                         style={setMotionStyle(0.8)}
                         minWidth={140}
                         img={SvgCard}
                         title={'Members in Latin America can get their own card to easily spend what you send.'}
                     />
-                    <MotionSquaryBox
+                    <MotionGridBox
+                        type={'squary'}
                         hasHover={true}
                         style={setMotionStyle(0.9)}
                         minWidth={140}
