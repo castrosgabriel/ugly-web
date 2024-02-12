@@ -12,10 +12,6 @@
     justify-content: center;
 }
 
-.first {
-    height: 80vh;
-}
-
 .bg-stash {
     transform: translateY(5vh);
     position: absolute;

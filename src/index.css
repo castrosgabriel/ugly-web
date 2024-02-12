@@ -79,6 +79,9 @@ p {
 }
 
 :root {
+  --color-primitives-gray-20: rgb(205, 205, 205);
+  --color-primitives-gray-50: rgb(87, 87, 87);
+  --color-primitives-gray-60: rgb(43, 43, 43);
   --color-primitives-gray-80: rgba(30, 30, 30, 1);
   --color-primitives-gray-90: rgba(21, 21, 21, 1);
   --color-primitives-grey-100: rgba(0, 0, 0, 1);

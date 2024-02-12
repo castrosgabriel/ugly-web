@@ -5,7 +5,9 @@ import '../styles/header.css'
 
 const BtnNav = ({ text }) => {
     return (
-        <div className='btn-nav'>
+        <div
+            className='btn-nav'>
+            <div className='btn-bg'/>
             <h5>{text}</h5>
             <img src={SvgDollar} alt="dollar" />
         </div>

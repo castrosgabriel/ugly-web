@@ -10,11 +10,8 @@
     color: var(--color-text);
     height: calc(100% - 64px);
     overflow: hidden;
-    cursor: pointer;
-}
-
-.box:hover {
-    background-color: #2f2f2f;
+    /* cursor: pointer; */
+    /* transition: all 0.1s ease; */
 }
 
 

@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/grid.css'
 
-const Col = ({ gap, children, alignItems, justifyContent, maxWidth, minWidth, maxHeight, minHeight }) => {
+const Col = ({ gap, children, alignItems, justifyContent, maxWidth, minWidth, maxHeight, minHeight, flex = 1 }) => {
     const styleCol = {
         maxHeight: `${maxHeight}px`,
         minHeight: `${minHeight}px`,
@@ -9,7 +9,8 @@ const Col = ({ gap, children, alignItems, justifyContent, maxWidth, minWidth, ma
         gap: `${gap}px`,
         alignItems: `${alignItems}`,
         maxWidth: `${maxWidth}px`,
-        minWidth: `${minWidth}px`
+        minWidth: `${minWidth}px`,
+        flex: `${flex}`
     }
     return (
         <div className='col' style={styleCol}>
@@ -18,7 +19,7 @@ const Col = ({ gap, children, alignItems, justifyContent, maxWidth, minWidth, ma
     )
 };
 
-const Row = ({ gap, children, alignItems, justifyContent, maxWidth, minWidth, maxHeight, minHeight }) => {
+const Row = ({ gap, children, alignItems, justifyContent, maxWidth, minWidth, maxHeight, minHeight, flex = 1 }) => {
     const styleRow = {
         maxHeight: `${maxHeight}px`,
         minHeight: `${minHeight}px`,
@@ -26,7 +27,8 @@ const Row = ({ gap, children, alignItems, justifyContent, maxWidth, minWidth, ma
         gap: `${gap}px`,
         alignItems: `${alignItems}`,
         maxWidth: `${maxWidth}px`,
-        minWidth: `${minWidth}px`
+        minWidth: `${minWidth}px`,
+        flex: `${flex}`
     }
     return (
         <div className='row' style={styleRow}>
