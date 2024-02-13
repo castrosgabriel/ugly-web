@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import { Row } from './Layout'
 import { SvgLogo, SvgLanguage, SvgDollar } from '../assets/svg'
 import '../styles/header.css'
@@ -6,12 +6,11 @@ import { motion } from 'framer-motion'
 
 const BtnNav = ({ text }) => {
     return (
-        <div
-            className='btn-nav'>
-            <div className='btn-bg' />
+        <button className='btn-nav'>
             <h5>{text}</h5>
             <img src={SvgDollar} alt="dollar" />
-        </div>
+            <div className='btn-bg' />
+        </button>
     )
 }
 

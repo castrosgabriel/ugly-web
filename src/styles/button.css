@@ -1,4 +1,4 @@
-button {
+.main-button {
     background-color: var(--c-ulgy);
     color: var(--c-text);
     padding: 12px 24px;
@@ -9,6 +9,6 @@ button {
     cursor: pointer;
 }
 
-button:active {
+.main-button:active {
     background-color: var(--c-pressed);
 }

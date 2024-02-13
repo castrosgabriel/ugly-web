@@ -100,6 +100,10 @@ p {
   letter-spacing: -0.05rem;
 }
 
+button {
+  all: unset
+}
+
 :root {
   --c-gray-20: rgb(205, 205, 205);
   --c-gray-50: rgb(87, 87, 87);

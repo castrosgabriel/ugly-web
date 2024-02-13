@@ -4,7 +4,7 @@ import '../styles/button.css'
 
 const Button = forwardRef(({ text }, ref) => {
     return (
-        <motion.button whileHover={{ scale: 1.1, backgroundColor: 'var(--c-pressed)' }} ref={ref}>
+        <motion.button className='main-button' whileHover={{ scale: 1.1, backgroundColor: 'var(--c-pressed)' }} ref={ref}>
             <p>{text}</p>
         </motion.button>
     )
