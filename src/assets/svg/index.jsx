@@ -5,6 +5,11 @@ import SvgStash from './stash.svg';
 import SvgLogo from './logo.svg';
 import SvgDollar from './dollar.svg';
 import SvgLanguage from './language.svg';
+import SvgTiktok from './tiktok.svg';
+import SvgTwitter from './twitter.svg';
+import SvgInstagram from './instagram.svg';
+import SvgByBff from './by-bff.svg';
+import SvgStashFooter from './stash-footer.svg';
 
 export {
     SvgArrow,
@@ -13,5 +18,10 @@ export {
     SvgStash,
     SvgLogo,
     SvgDollar,
-    SvgLanguage
+    SvgLanguage,
+    SvgTiktok,
+    SvgTwitter,
+    SvgInstagram,
+    SvgByBff,
+    SvgStashFooter
 }

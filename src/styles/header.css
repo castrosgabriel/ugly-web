@@ -1,17 +1,16 @@
 .header {
     position: fixed;
-    background-color: rgba(16, 16, 16, 0.515);
+    background-color: var(--c-transparency);
     width: calc(100% - 128px);
     max-width: calc(1400px - 64px);
     padding: 16px 32px;
     border-radius: 32px;
-    z-index: 99;
-    
+    z-index: 99; 
+    justify-content: center;
+    align-items: center;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
-
-
 
 .btn-nav {
     display: flex;
@@ -22,7 +21,7 @@
 }
 
 .btn-bg {
-    background-color: var(--color-ulgy);
+    background-color: var(--c-ulgy);
     height: 100%;
     width: 0%;
     position: absolute;

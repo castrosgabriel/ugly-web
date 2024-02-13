@@ -12,7 +12,7 @@ const Grid = () => {
     const ref = useRef();
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["0 1", "0 0.2"]
+        offset: ["0 1.4", "0 0.2"]
     });
 
     const setMotionStyle = (delay) => {
@@ -28,13 +28,13 @@ const Grid = () => {
             <Col minWidth={400}>
                 <MotionGridBox
                     type={'horizontal'}
-                    hoverColor={'var(--color-primitives-gray-20)'}
+                    hoverColor={'var(--c-gray-20)'}
                     hasHover={true}
                     style={setMotionStyle(0)}
                     title={'US bank account*.'}
                     subtitle={'(FDIC insured up to $250,000)'}
-                    bgColor={'var(--color-primitives-white-100)'}
-                    contentColor={'var(--color-primitives-black-100)'}
+                    bgColor={'var(--c-white-100)'}
+                    contentColor={'var(--c-gray-100)'}
                 />
                 <Row maxHeight={800}>
                     <MotionGridBox
@@ -62,7 +62,7 @@ const Grid = () => {
                         style={setMotionStyle(0)}
                         img={SvgPig}
                         title={`Move money, whether it's next door or abroad to Latin America. Zero Cost. Only with Ugly Cash`}
-                        contentColor={'var(--color-text-hl)'}
+                        contentColor={'var(--c-text-hl)'}
                     />
                 </Row>
                 <Row maxHeight={500}>

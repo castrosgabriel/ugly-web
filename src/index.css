@@ -15,10 +15,23 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--color-bg);
+  background-color: var(--c-bg);
+  scroll-behavior: smooth;
+}
+
+.legal-text {
+  font-family: 'Inter', sans-serif;
+  font-size: .7rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.05rem;
+  color: var(--c-text);
+  width: 60%;
 }
 
 h1 {
+  margin: 0;
   font-family: 'Helvetica Now', sans-serif;
   text-align: center;
   font-size: 10rem;
@@ -55,7 +68,7 @@ h5 {
   font-weight: 400;
   line-height: 116%;
   letter-spacing: -0.05rem;
-  color: var(--color-text)
+  color: var(--c-text)
 }
 
 li {
@@ -88,20 +101,22 @@ p {
 }
 
 :root {
-  --color-primitives-gray-20: rgb(205, 205, 205);
-  --color-primitives-gray-50: rgb(87, 87, 87);
-  --color-primitives-gray-60: rgb(43, 43, 43);
-  --color-primitives-gray-80: rgba(30, 30, 30, 1);
-  --color-primitives-gray-90: rgba(21, 21, 21, 1);
-  --color-primitives-grey-100: rgba(0, 0, 0, 1);
-  --color-primitives-purple-100: rgba(250, 0, 255, 1);
-  --color-primitives-purple-80: rgb(152, 7, 155);
-  --color-primitives-white-100: rgba(255, 255, 255, 1);
-  --color-box-1: var(--color-primitives-gray-90);
-  --color-box-2: var(--color-product-text);
-  --color-bg: var(--color-primitives-grey-100);
-  --color-text: var(--color-primitives-white-100);
-  --color-text-hl: var(--color-primitives-purple-100);
-  --color-ulgy: var(--color-primitives-purple-100);
-  --color-pressed: var(--color-primitives-purple-80);
+  --c-gray-20: rgb(205, 205, 205);
+  --c-gray-50: rgb(87, 87, 87);
+  --c-gray-60: rgb(43, 43, 43);
+  --c-gray-80: rgba(30, 30, 30, 1);
+  --c-gray-90: rgba(21, 21, 21, 1);
+  --c-gray-100: rgba(0, 0, 0, 1);
+  --c-purple-100: rgba(250, 0, 255, 1);
+  --c-purple-80: rgb(152, 7, 155);
+  --c-white-100: rgba(255, 255, 255, 1);
+
+  --c-transparency: rgba(21, 21, 21, .55);
+  --c-box-1: var(--c-gray-90);
+  --c-box-2: var(--c-text);
+  --c-bg: var(--c-gray-100);
+  --c-text: var(--c-white-100);
+  --c-text-hl: var(--c-purple-100);
+  --c-ulgy: var(--c-purple-100);
+  --c-pressed: var(--c-purple-80);
 }
