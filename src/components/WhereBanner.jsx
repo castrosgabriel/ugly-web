@@ -1,26 +1,21 @@
 import React, { useRef } from 'react';
+import { motion, useScroll, useTransform, useInView, delay, easeInOut } from 'framer-motion';
 import { Row } from './Layout';
 import { Box } from './Box';
 import { Globe } from '../assets/png';
-import { motion, useScroll, useTransform, useInView, delay, easeInOut } from 'framer-motion';
 
 const MotionBox = motion(Box)
 
 const WhereBanner = () => {
     const bannerRef = useRef();
-    const isInView = useInView(bannerRef, {
-        // once: true,
-        margin: "0px 100px -50px 0px"
-    });
-    const { scrollYProgress } = useScroll({
-        target: bannerRef,
-        offset: ["0 1", "0 0.3"]
-    });
-    const yBox = useTransform(scrollYProgress, [0, 1], [200, 0]);
-    const scaleBox = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
-    const opacityBox = useTransform(scrollYProgress, [0, 1], [0, 1]);
-
-    const variantsTitle = (delay) => {
+    const isInView = useInView(bannerRef, { margin: "0px 100px -50px 0px" });
+    const { scrollYProgress } = useScroll({ target: bannerRef, offset: ["0 1", "0 0.3"] });
+    const styleBannerBox = {
+        y: useTransform(scrollYProgress, [0, 1], [200, 0]),
+        scale: useTransform(scrollYProgress, [0, 1], [0.9, 1]),
+        opacity: useTransform(scrollYProgress, [0, 1], [0, 1])
+    }
+    const getContentVariants = (delay) => {
         return {
             initial: { opacity: 0, y: 100 },
             animate: isInView ? {
@@ -36,23 +31,23 @@ const WhereBanner = () => {
     }
 
     return (
-        <MotionBox style={{ scale: scaleBox, y: yBox, opacity: opacityBox }} ref={bannerRef}>
+        <MotionBox style={styleBannerBox} ref={bannerRef}>
             <Row>
                 <motion.h2
-                    variants={variantsTitle(.3)}
+                    variants={getContentVariants(.3)}
                     initial='initial'
                     animate='animate'
                 >
                     WHERE'S <br /> UGLY CASH? <br /> RIGHT WHERE <br /> YOU NEED IT</motion.h2>
                 <Row gap={80} justifyContent={'flex-end'}>
                     <motion.h5
-                        variants={variantsTitle(.4)}
+                        variants={getContentVariants(.4)}
                         initial='initial'
                         animate='animate'>
                         United States
                     </motion.h5>
                     <motion.h5
-                        variants={variantsTitle(.5)}
+                        variants={getContentVariants(.5)}
                         initial='initial'
                         animate='animate'
                     >
@@ -75,7 +70,7 @@ const WhereBanner = () => {
                 </Row>
             </Row>
             <motion.img
-                variants={variantsTitle(.6)}
+                variants={getContentVariants(.6)}
                 initial='initial'
                 animate='animate'
                 className='globe' src={Globe} />

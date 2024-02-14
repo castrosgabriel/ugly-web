@@ -15,10 +15,17 @@ const Footer = () => {
                             <img src={SvgByBff} alt='Best Friend Finance' />
                         </Row>
                         <p className='legal-text' >
-                            *Ugly Cash is a financial technology company, not a bank. Banking services provided by Bangor Savings Bank, Member FDIC.
-                            **The Ugly Cash Mastercard® Debit Card is issued by Bangor Savings Bank pursuant to license by Mastercard International Incorporated. Mastercard is a registered trademark, and the circle design is a trademark of Mastercard International Incorporated. Spend anywhere Mastercard is accepted.
+                            *Ugly Cash is a financial technology company, not a bank. 
+                            Banking services provided by Bangor Savings Bank, Member FDIC.
+                            **The Ugly Cash Mastercard® Debit Card is issued by Bangor Savings 
+                            Bank pursuant to license by Mastercard International Incorporated. 
+                            Mastercard is a registered trademark, and the circle design is a 
+                            trademark of Mastercard International Incorporated. 
+                            Spend anywhere Mastercard is accepted.
 
-                            1International card issuing partner will be announced soon. Any other brands mentioned in the announcement are not part of the international card program.Best Friend Finance, LLC.
+                            1International card issuing partner will be announced soon. 
+                            Any other brands mentioned in the announcement are not part of 
+                            the international card program.Best Friend Finance, LLC.
                         </p>
                     </Col>
                     <Col gap={56} justifyContent={'space-between'}>

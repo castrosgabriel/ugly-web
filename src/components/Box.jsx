@@ -1,28 +1,29 @@
 import React, { forwardRef, useRef } from 'react'
-import '../styles/box.css'
-import { Col, Row } from './Layout'
-import { Icon, Img, ArrowIcon } from './ImageCp'
-import { SvgArrow } from '../assets/svg'
 import { motion, useInView } from 'framer-motion'
+import { Col, Row } from './Layout'
+import { Img, ArrowIcon } from './ImageCp'
+import '../styles/box.css'
 
 const Box = forwardRef(({
-    bgColor,
-    hoverColor = 'var(--c-gray-60)',
     children,
-    contentColor,
+    bgColor = 'var(--c-box-1)',
+    hoverColor = 'var(--c-gray-60)',
+    contentColor = 'var(--c-text)',
     minWidth,
+    maxWidth,
     maxHeight,
+    minHeight,
     onClick,
     hasHover },
     ref) => {
 
-    const styleBox = () => {
-        return {
-            maxHeight: `${maxHeight}px`,
-            minWidth: `${minWidth}px`,
-            backgroundColor: bgColor,
-            color: `${contentColor}`,
-        }
+    const styleBox = {
+        minHeight: `${minHeight}px`,
+        maxHeight: `${maxHeight}px`,
+        maxWidth: `${maxWidth}px`,
+        minWidth: `${minWidth}px`,
+        backgroundColor: bgColor,
+        color: `${contentColor}`,
     }
 
     return (
@@ -30,16 +31,17 @@ const Box = forwardRef(({
             ref={ref}
             onClick={onClick}
             className="box"
-            whileHover={hasHover ? {
-                cursor: 'pointer',
-                backgroundColor: hoverColor
-            } : null}
-            style={styleBox()} >
+            whileHover={
+                hasHover ? {
+                    cursor: 'pointer',
+                    backgroundColor: hoverColor
+                } : null}
+            style={styleBox}
+        >
             {children}
         </motion.div >
     )
 })
-
 
 const GridBox = forwardRef(({
     type,
@@ -122,7 +124,6 @@ const GridBox = forwardRef(({
         } : null,
     }
 
-
     return (
         <Box {...boxProps}>
             <MotionBoxContent
@@ -132,9 +133,7 @@ const GridBox = forwardRef(({
                 ref={boxRef}
                 contentColor={contentColor} />
         </Box>
-
     )
-
 })
 
 export { Box, GridBox }
