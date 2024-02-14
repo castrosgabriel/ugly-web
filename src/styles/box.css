@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     background-color: var(--c-box-1);
-    flex: 1;
     border-radius: 32px;
     padding: 32px;
     gap: 48px;
@@ -10,8 +9,7 @@
     color: var(--c-text);
     height: calc(100% - 64px);
     overflow: hidden;
-    /* cursor: pointer; */
-    /* transition: all 0.1s ease; */
+    flex: 1;
 }
 
 

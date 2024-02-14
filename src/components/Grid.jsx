@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { GridBox } from './Box';
+import { GridBox } from './GridBox';
 import { Row, Col } from './Layout';
 import { CardMc, Cup, Passport } from '../assets/png'
 import { SvgPig, SvgCard } from '../assets/svg'
