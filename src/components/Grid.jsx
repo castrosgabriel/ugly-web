@@ -3,7 +3,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { GridBox } from './GridBox';
 import { Row, Col } from './Layout';
 import { CardMc, Cup, Passport } from '../assets/png'
-import { SvgPig, SvgCard } from '../assets/svg'
+import { SvgCard } from '../assets/svg'
+import LottiePig from '../assets/lottie/pig.json'
 import '../styles/grid.css'
 
 const MotionGridBox = motion(GridBox)
@@ -24,8 +25,14 @@ const Grid = () => {
     }
 
     return (
-        <div ref={ref} className='grid'>
-            <Col minWidth={400}>
+        <motion.div
+            initial={{ y: 300 }}
+            animate={{ y: 0 }}
+            transition={{ duration: .8, delay: .2, ease: 'easeInOut' }}
+            ref={ref}
+            className='grid'
+        >
+            <Col minWidth={480}>
                 <Row>
                     <MotionGridBox
                         type={'horizontal'}
@@ -37,7 +44,7 @@ const Grid = () => {
                         contentColor={'var(--c-gray-100)'}
                     />
                 </Row>
-                <Row maxHeight={800}>
+                <Row>
                     <MotionGridBox
                         type={'vertical'}
                         style={setMotionStyle(0.4)}
@@ -52,35 +59,33 @@ const Grid = () => {
                     />
                 </Row>
             </Col>
-            <Col minWidth={400}>
+            <Col minWidth={480}>
                 <Row>
                     <MotionGridBox
                         type={'squary'}
                         style={setMotionStyle(0)}
-                        img={SvgPig}
+                        hasLottie={true}
+                        img={LottiePig}
                         title={`Move money, whether it's next door or abroad to Latin America. Zero Cost. Only with Ugly Cash`}
                         contentColor={'var(--c-text-hl)'}
                     />
                 </Row>
-                <Row maxHeight={500}>
+                <Row>
                     <MotionGridBox
                         type={'squary'}
                         style={setMotionStyle(0.8)}
-                        minWidth={140}
                         img={SvgCard}
                         title={'Members in Latin America can get their own card to easily spend what you send.'}
                     />
                     <MotionGridBox
                         type={'squary'}
                         style={setMotionStyle(0.9)}
-                        minWidth={140}
                         img={Cup}
                         title={'Earn rewards for sending money.'}
-                        height={100}
                     />
                 </Row>
             </Col>
-        </div>
+        </motion.div>
     )
 }
 

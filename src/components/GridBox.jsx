@@ -3,11 +3,13 @@ import { Col, Row } from './Layout'
 import { Img, ArrowIcon } from './ImageCp'
 import { Box } from './Box'
 import { motion, useInView } from 'framer-motion'
+import Lottie from 'react-lottie'
 
 const MotionBox = motion(Box)
 const GridBox = forwardRef(({
     type,
     img,
+    hasLottie = false,
     title,
     subtitle,
     contentColor,
@@ -15,7 +17,7 @@ const GridBox = forwardRef(({
     hoverColor,
     minWidth,
     height,
-    maxHeight },
+    maxHeight, },
     ref) => {
 
     const [showDetails, setShowDetails] = useState(false)
@@ -29,6 +31,12 @@ const GridBox = forwardRef(({
         contentColor: contentColor,
         height: height,
         onClick: () => setShowDetails(!showDetails),
+    }
+
+    const animationOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: img,
     }
 
     const BoxContent = forwardRef(({ contentColor = 'var(--c-text)' }, ref) => {
@@ -55,7 +63,8 @@ const GridBox = forwardRef(({
                 return (
                     <Col ref={ref}>
                         <Row justifyContent={'space-between'}>
-                            <Img src={img} maxHeight={200} minHeight={100} />
+                            {hasLottie && <div className='lottie'><Lottie options={animationOptions} /></div>}
+                            {!hasLottie && <Img src={img} maxHeight={200} minHeight={100} />}
                             <ArrowIcon fill={contentColor} />
                         </Row>
                         <h3>{title}</h3>
@@ -99,7 +108,7 @@ const GridBox = forwardRef(({
     }
 
     return (
-        <MotionBox {...boxProps }>
+        <MotionBox {...boxProps}>
             {showDetails ?
                 <DetailsContent />
                 :

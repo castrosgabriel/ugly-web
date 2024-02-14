@@ -2,6 +2,8 @@ import React, { forwardRef } from 'react'
 import { motion } from 'framer-motion'
 import '../styles/box.css'
 
+//TODO: useMemo estudiar para ver como reducir el renderizado de los componentes
+
 const Box = forwardRef(({
     children,
     onClick,
