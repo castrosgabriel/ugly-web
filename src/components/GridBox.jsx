@@ -37,6 +37,7 @@ const GridBox = forwardRef(({
         loop: true,
         autoplay: true,
         animationData: img,
+        renderer: 'svg',
     }
 
     const BoxContent = forwardRef(({ contentColor = 'var(--c-text)' }, ref) => {

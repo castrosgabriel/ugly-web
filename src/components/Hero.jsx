@@ -16,6 +16,7 @@ const Hero = () => {
         loop: true,
         autoplay: true,
         animationData: animationMember,
+        renderer: 'svg',
     }
     const heroRef = useRef();
     const { scrollYProgress } = useScroll({ target: heroRef, offset: ["0 0", "1 0"] });
@@ -39,7 +40,7 @@ const Hero = () => {
                 <Col justifyContent={'space-between'} alignItems={'center'}>
                     <motion.h1 initial={{ y: 40, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
+                        transition={{ duration: 1, delay: .2, ease: "easeOut" }}
                         style={{ y: yTitle }}
                         className='title'>
                         Beautiful Banking <br />
@@ -63,7 +64,7 @@ const Hero = () => {
                         <Icon icon={SvgInstagram} />
                     </div>
                     <motion.div
-                        initial={{ opacity: 0, rotate: -20, scale: 0.6 }}
+                        initial={{ opacity: 0, rotate: -10, scale: 0.6 }}
                         animate={{ opacity: 1, rotate: 0, scale: 1 }}
                         transition={{ duration: .2, delay: 0.3 }}
                         className='member-tag'

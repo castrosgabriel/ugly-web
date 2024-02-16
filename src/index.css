@@ -16,7 +16,6 @@ html {
 body {
   margin: 0;
   background-color: var(--c-bg);
-  scroll-behavior: smooth;
 }
 
 .legal-text {
